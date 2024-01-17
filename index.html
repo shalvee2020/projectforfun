@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Do you wanna go out with me?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/eUXdFYeVwfsihPi2ut/giphy.gif?cid=ecf05e47eqx8ysi8lzxiwwh0dgh7b9vyrhfifaxxhmtcac7d&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+                
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    let moveCount = 0;
+                    function moveButton() {
+                        if (moveCount < 8){
+                        var a = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                        var b = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                        document.getElementById('noButton').style.left = `${a}px`;
+                        document.getElementById('noButton').style.top = `${b}px`;
+                        moveCount++;
+                        }
+                        else{
+                            alert("So, you really don't want to say yes huhhhh!")
+                            alert("think again!!")
+                            alert("you don't feel pity for that innocent cat begging you!!")
+                            alert("you, merciless human,so your answer doesn't change.click ok if you want to leave")
+                            alert("please press cancel and say yesss!!!")
+                            if(confirm("I said press CANCEL and click on yes, you fool!! Fine,press ok to leave")){
+                                window.location.href = "no.html";
+                            }
+                            else{
+                                return false;
+                            }
+                            
+                            
+                            
+                        }
+                    }
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
